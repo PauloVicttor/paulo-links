@@ -8,41 +8,34 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2=family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; }
         .grid-blur {
             backdrop-filter: blur(12px);
-            background: rgba(18, 18, 18, 0.6);
+            -webkit-backdrop-filter: blur(12px);
+            background: rgba(18, 18, 18, 0.65);
         }
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-        .animate-fade-in {
-            animation: fadeIn 0.6s ease-out forwards;
-        }
+        .animate-fade-in { animation: fadeIn 0.5s ease-out forwards; }
     </style>
 </head>
-<body class="bg-[#09090b] text-zinc-100 min-h-screen flex items-center justify-center p-4 md:p-8 relative overflow-x-hidden antialiased">
+<body class="bg-[#09090b] text-zinc-100 min-h-screen flex flex-col justify-start md:justify-center items-center py-6 px-4 md:px-8 relative overflow-x-hidden antialiased">
 
-    <!-- Efeitos de fundo (Bokehs de luz luxo) - Ajustados para não quebrar o layout no mobile -->
-    <div class="absolute top-[-10%] left-[-20%] md:left-[-10%] w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-amber-500/10 rounded-full blur-[80px] md:blur-[120px] pointer-events-none"></div>
-    <div class="absolute bottom-[-5%] right-[-20%] md:right-[-10%] w-[350px] md:w-[600px] h-[350px] md:h-[600px] bg-zinc-800/25 rounded-full blur-[100px] md:blur-[150px] pointer-events-none"></div>
+    <!-- Efeitos de fundo (Bokehs de luz) - Otimizados para mobile -->
+    <div class="absolute top-[-5%] left-[-15%] w-[250px] md:w-[500px] h-[250px] md:h-[500px] bg-amber-500/10 rounded-full blur-[70px] md:blur-[120px] pointer-events-none"></div>
+    <div class="absolute bottom-[5%] right-[-15%] w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-zinc-800/20 rounded-full blur-[90px] md:blur-[150px] pointer-events-none"></div>
 
     <!-- Container Principal -->
-    <main class="w-full max-w-4xl opacity-0 animate-fade-in">
+    <main class="w-full max-w-4xl opacity-0 animate-fade-in z-10">
 
         <!-- Header / Perfil -->
         <div class="flex flex-col items-center text-center mb-6 md:mb-8">
-            <div class="relative group mb-3 md:mb-4">
+            <div class="relative group mb-3">
                 <div class="absolute -inset-0.5 bg-gradient-to-r from-amber-500 to-zinc-700 rounded-full blur opacity-40 group-hover:opacity-70 transition duration-500"></div>
                 <img src="https://github.com/paulovicttor.png" alt="Paulo Victtor" class="relative w-20 h-20 md:w-24 md:h-24 rounded-full object-cover border-2 border-zinc-800/80">
             </div>
@@ -55,59 +48,59 @@
         </div>
 
         <!-- Grid Bento Box -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4 w-full">
 
-            <!-- Card 1: Sobre / Bio Curta (Ocupa 2 colunas no desktop) -->
+            <!-- Card 1: Sobre / Bio Curta -->
             <div class="md:col-span-2 grid-blur border border-zinc-800/60 rounded-2xl md:rounded-3xl p-5 md:p-6 flex flex-col justify-between hover:border-zinc-700/80 transition-all duration-300">
-                <div>
+                <div class="block">
                     <span class="text-[10px] md:text-xs font-semibold text-amber-500 tracking-wider uppercase">Overview</span>
-                    <h2 class="text-lg md:text-xl font-bold text-white mt-1.5 mb-2.5 md:mb-3 leading-snug">Construindo ecossistemas digitais robustos e performáticos.</h2>
+                    <h2 class="text-base md:text-xl font-bold text-white mt-1 mb-2 leading-snug">Construindo ecossistemas digitais robustos e performáticos.</h2>
                     <p class="text-zinc-400 text-xs md:text-sm leading-relaxed">
                         Especializado no desenvolvimento full-stack utilizando tecnologias modernas como React, Next.js, Node.js e arquiteturas conteinerizadas com Docker. Focado em acoplar código limpo a infraestruturas seguras.
                     </p>
                 </div>
-                <div class="flex flex-wrap gap-1.5 mt-5 md:mt-6">
-                    <span class="bg-zinc-900 border border-zinc-800 px-2 py-0.5 md:py-1 rounded-md text-[11px] text-zinc-300">React</span>
-                    <span class="bg-zinc-900 border border-zinc-800 px-2 py-0.5 md:py-1 rounded-md text-[11px] text-zinc-300">Next.js</span>
-                    <span class="bg-zinc-900 border border-zinc-800 px-2 py-0.5 md:py-1 rounded-md text-[11px] text-zinc-300">Node.js</span>
-                    <span class="bg-zinc-900 border border-zinc-800 px-2 py-0.5 md:py-1 rounded-md text-[11px] text-zinc-300">Docker</span>
-                    <span class="bg-zinc-900 border border-zinc-800 px-2 py-0.5 md:py-1 rounded-md text-[11px] text-zinc-300">AWS</span>
+                <div class="flex flex-wrap gap-1.5 mt-4 md:mt-6">
+                    <span class="bg-zinc-900 border border-zinc-800 px-2.5 py-0.5 rounded-md text-[11px] text-zinc-300">React</span>
+                    <span class="bg-zinc-900 border border-zinc-800 px-2.5 py-0.5 rounded-md text-[11px] text-zinc-300">Next.js</span>
+                    <span class="bg-zinc-900 border border-zinc-800 px-2.5 py-0.5 rounded-md text-[11px] text-zinc-300">Node.js</span>
+                    <span class="bg-zinc-900 border border-zinc-800 px-2.5 py-0.5 rounded-md text-[11px] text-zinc-300">Docker</span>
+                    <span class="bg-zinc-900 border border-zinc-800 px-2.5 py-0.5 rounded-md text-[11px] text-zinc-300">AWS</span>
                 </div>
             </div>
 
             <!-- Card 2: Link Principal (LinkedIn) -->
-            <a href="https://linkedin.com/in/seu-usuario" target="_blank" class="grid-blur border border-zinc-800/60 rounded-2xl md:rounded-3xl p-5 md:p-6 flex flex-col justify-between group hover:border-amber-500/40 transition-all duration-300 relative overflow-hidden active:scale-[0.98]">
+            <a href="https://linkedin.com/in/paulovicttor" target="_blank" class="grid-blur border border-zinc-800/60 rounded-2xl md:rounded-3xl p-5 md:p-6 flex flex-col justify-between group hover:border-amber-500/40 transition-all duration-300 relative overflow-hidden active:scale-[0.99]">
                 <div class="absolute top-0 right-0 w-24 h-24 bg-blue-600/5 rounded-full blur-xl group-hover:bg-blue-600/10 transition-all duration-500"></div>
                 <div class="flex justify-between items-start">
-                    <div class="w-10 h-10 md:w-12 md:h-12 bg-zinc-900 border border-zinc-800 rounded-xl md:rounded-2xl flex items-center justify-center text-blue-400 text-lg md:text-xl group-hover:scale-105 transition-transform">
+                    <div class="w-10 h-10 bg-zinc-900 border border-zinc-800 rounded-xl flex items-center justify-center text-blue-400 text-lg group-hover:scale-105 transition-transform">
                         <i class="fab fa-linkedin-in"></i>
                     </div>
-                    <i class="fa-solid fa-arrow-up-right-from-square text-zinc-600 group-hover:text-zinc-400 transition-colors text-xs md:text-sm"></i>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-zinc-600 group-hover:text-zinc-400 transition-colors text-xs"></i>
                 </div>
-                <div class="mt-6 md:mt-8">
-                    <h3 class="text-base md:text-lg font-bold text-white group-hover:text-amber-500 transition-colors">Conectar no LinkedIn</h3>
-                    <p class="text-zinc-500 text-[11px] md:text-xs mt-0.5 md:mt-1">Histórico profissional, artigos e networking.</p>
+                <div class="mt-5 md:mt-8">
+                    <h3 class="text-base font-bold text-white group-hover:text-amber-500 transition-colors">Conectar no LinkedIn</h3>
+                    <p class="text-zinc-500 text-[11px] md:text-xs mt-0.5">Histórico profissional, artigos e networking.</p>
                 </div>
             </a>
 
             <!-- Card 3: Link Principal (GitHub) -->
-            <a href="https://github.com/paulovicttor" target="_blank" class="grid-blur border border-zinc-800/60 rounded-2xl md:rounded-3xl p-5 md:p-6 flex flex-col justify-between group hover:border-amber-500/40 transition-all duration-300 relative overflow-hidden active:scale-[0.98]">
+            <a href="https://github.com/paulovicttor" target="_blank" class="grid-blur border border-zinc-800/60 rounded-2xl md:rounded-3xl p-5 md:p-6 flex flex-col justify-between group hover:border-amber-500/40 transition-all duration-300 relative overflow-hidden active:scale-[0.99]">
                 <div class="flex justify-between items-start">
-                    <div class="w-10 h-10 md:w-12 md:h-12 bg-zinc-900 border border-zinc-800 rounded-xl md:rounded-2xl flex items-center justify-center text-white text-lg md:text-xl group-hover:scale-105 transition-transform">
+                    <div class="w-10 h-10 bg-zinc-900 border border-zinc-800 rounded-xl flex items-center justify-center text-white text-lg group-hover:scale-105 transition-transform">
                         <i class="fab fa-github"></i>
                     </div>
-                    <i class="fa-solid fa-arrow-up-right-from-square text-zinc-600 group-hover:text-zinc-400 transition-colors text-xs md:text-sm"></i>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-zinc-600 group-hover:text-zinc-400 transition-colors text-xs"></i>
                 </div>
-                <div class="mt-6 md:mt-8">
-                    <h3 class="text-base md:text-lg font-bold text-white group-hover:text-amber-500 transition-colors">Repositórios GitHub</h3>
-                    <p class="text-zinc-500 text-[11px] md:text-xs mt-0.5 md:mt-1">Códigos fontes, laboratórios e projetos.</p>
+                <div class="mt-5 md:mt-8">
+                    <h3 class="text-base font-bold text-white group-hover:text-amber-500 transition-colors">Repositórios GitHub</h3>
+                    <p class="text-zinc-500 text-[11px] md:text-xs mt-0.5">Códigos fontes, laboratórios e projetos.</p>
                 </div>
             </a>
 
-            <!-- Card 4: Portfólio de Projetos Atuais (Ocupa 2 colunas no desktop) -->
+            <!-- Card 4: Destaques -->
             <div class="md:col-span-2 grid-blur border border-zinc-800/60 rounded-2xl md:rounded-3xl p-5 md:p-6 hover:border-zinc-700/80 transition-all duration-300">
                 <span class="text-[10px] md:text-xs font-semibold text-zinc-500 tracking-wider uppercase">Destaques do Ecossistema</span>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mt-3">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-3">
                     <div class="p-3.5 bg-zinc-900/40 border border-zinc-800/80 rounded-xl hover:bg-zinc-900/80 transition-colors">
                         <h4 class="text-xs md:text-sm font-semibold text-zinc-200">Space Tourism</h4>
                         <p class="text-zinc-500 text-[11px] mt-0.5">Plataforma responsiva interativa multiplataforma.</p>
@@ -119,24 +112,24 @@
                 </div>
             </div>
 
-            <!-- Card 5: Contato Direto (Email) -->
-            <a href="mailto:vpaulo120@gmail.com" class="grid-blur border border-zinc-800/60 rounded-2xl md:rounded-3xl p-5 md:p-6 flex flex-col justify-between group hover:border-emerald-500/40 transition-all duration-300 bg-gradient-to-br from-zinc-900/20 to-emerald-950/5 active:scale-[0.98]">
+            <!-- Card 5: Contato -->
+            <a href="mailto:vpaulo120@gmail.com" class="grid-blur border border-zinc-800/60 rounded-2xl md:rounded-3xl p-5 md:p-6 flex flex-col justify-between group hover:border-emerald-500/40 transition-all duration-300 bg-gradient-to-br from-zinc-900/20 to-emerald-950/5 active:scale-[0.99]">
                 <div class="flex justify-between items-start">
-                    <div class="w-10 h-10 md:w-12 md:h-12 bg-zinc-900 border border-zinc-800 rounded-xl md:rounded-2xl flex items-center justify-center text-emerald-400 text-lg md:text-xl group-hover:scale-105 transition-transform">
+                    <div class="w-10 h-10 bg-zinc-900 border border-zinc-800 rounded-xl flex items-center justify-center text-emerald-400 text-lg group-hover:scale-105 transition-transform">
                         <i class="fa-regular fa-envelope"></i>
                     </div>
-                    <i class="fa-solid fa-arrow-up-right-from-square text-zinc-600 group-hover:text-emerald-400 transition-colors text-xs md:text-sm"></i>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-zinc-600 group-hover:text-emerald-400 transition-colors text-xs"></i>
                 </div>
-                <div class="mt-6 md:mt-8">
-                    <h3 class="text-base md:text-lg font-bold text-white group-hover:text-emerald-400 transition-colors">Iniciar Conversa</h3>
-                    <p class="text-zinc-500 text-[11px] md:text-xs mt-0.5 md:mt-1">Vamos construir algo incrível juntos?</p>
+                <div class="mt-5 md:mt-8">
+                    <h3 class="text-base font-bold text-white group-hover:text-emerald-400 transition-colors">Iniciar Conversa</h3>
+                    <p class="text-zinc-500 text-[11px] md:text-xs mt-0.5">Vamos construir algo incrível juntos?</p>
                 </div>
             </a>
 
         </div>
 
         <!-- Footer -->
-        <footer class="text-center mt-10 md:mt-12 text-zinc-600 text-[11px] tracking-wide">
+        <footer class="text-center mt-8 md:mt-12 text-zinc-600 text-[11px] tracking-wide w-full">
             &copy; 2026 Paulo Victtor.
         </footer>
     </main>
